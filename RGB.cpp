@@ -4,8 +4,6 @@
 
 #include "RGB.h"
 
-RGB::RGB() {}
-
 RGB::RGB(float red, float green, float blue)
 {
     this -> red = red;

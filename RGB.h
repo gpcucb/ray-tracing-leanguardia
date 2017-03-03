@@ -1,7 +1,3 @@
-//
-// Created by Leandro on 2/21/17.
-//
-
 #ifndef PROJECTS_RGB_H
 #define PROJECTS_RGB_H
 
@@ -9,14 +5,14 @@
 using namespace std;
 
 class RGB {
+
 private:
     float red, green, blue;
 
 public:
-    RGB();
+    RGB(float, float, float);
     ~RGB();
 
-    RGB(float, float, float);
     void show();
 
 };
