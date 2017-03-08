@@ -15,8 +15,8 @@ Vector::~Vector()
 void Vector::show()
 {
     cout<<"X. "<< x << endl
-    <<"Y. "<< y << endl
-    <<"Z. "<< z << endl;
+        <<"Y. "<< y << endl
+        <<"Z. "<< z << endl;
 }
 
 Vector Vector::sum(Vector v)
@@ -31,4 +31,21 @@ Vector Vector::difference(Vector v)
     return Vector(x - v.x,
                   y - v.y,
                   z - v.z);
+}
+
+float Vector::module()
+{
+    return (float)sqrt(x*x + y*y + z*z);
+}
+
+Vector Vector::vectorialProduct(Vector v)
+{
+    return Vector (y*v.z - z*v.y,
+                   z*v.x - x*v.z,
+                   x*v.y - y*v.x);
+}
+
+float Vector::scalarProduct(Vector v)
+{
+    return x*v.x + y*v.y + z*v.z;
 }

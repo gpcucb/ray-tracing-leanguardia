@@ -3,5 +3,5 @@ project(Projects)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp RGB.cpp RGB.h)
+set(SOURCE_FILES main.cpp RGB.cpp RGB.h Vector.cpp Vector.h)
 add_executable(Projects ${SOURCE_FILES})
