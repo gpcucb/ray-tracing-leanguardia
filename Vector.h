@@ -8,14 +8,17 @@ using namespace std;
 class Vector
 {
     public:
+        Vector();
         Vector(float, float, float);
         ~Vector();
         void show();
         Vector sum(Vector);
+        Vector sumToZ(float);
         Vector difference(Vector);
-        float module();
-        Vector vectorialProduct(Vector);
-        float scalarProduct(Vector);
+        float length();
+        float dotProduct(Vector);
+        Vector crossProduct(Vector);
+        Vector divide(float);
 
     private:
         float x, y, z;

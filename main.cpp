@@ -1,21 +1,22 @@
 #include "RGB.h"
-#include "Vector.h"
+#include "Camera.h"
 
 int main() {
 
-    RGB rgb(12.343, 123.23, 342.342);
-    rgb.show();
+//    RGB rgb(12.343, 123.23, 342.342);
+//    rgb.show();
 
-    Vector v (1,2,3);
-    v.show();
+    Vector eye (1,1,1);
+    Vector center (0,0,0);
+    Vector up (0,1,0);
 
-    Vector v2 (3,2,1);
-    v2.show();
+    Camera camera (eye, center, up);
 
-    Vector v3 = v.sum(v2);
-    v3.show();
+    cout << eye.length() << endl ;
 
-    v3 = v.difference(v2);
-    v3.show();
+    camera.w().show();
+    camera.u().show();
+    camera.v().show();
+
     return 0;
 }
