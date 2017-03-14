@@ -3,20 +3,23 @@
 
 int main() {
 
-//    RGB rgb(12.343, 123.23, 342.342);
-//    rgb.show();
+    Vector eye(1, 2, -6);
+    Vector center(1, 2, -4);
+    Vector	up(0, 1, 0);
+    float	fieldOfView = 39.0;
+    float	distanceTo = 1.0;
+    float	nx = 640.0;
+    float	ny = 480.0;
 
-    Vector eye (1,1,1);
-    Vector center (0,0,0);
-    Vector up (0,1,0);
+    Camera camera(eye, center, up, fieldOfView, distanceTo);
 
-//    Camera camera (eye, center, up);
-
-//    cout << eye.length() << endl ;
-
-//    camera.wVec().show();
-//    camera.uVec().show();
-//    camera.v().show();
+    for (int i = 0; i < nx; i++)
+    {
+        for (int j = 0; j < ny; j++)
+        {
+            camera.calculateRayDirection(i, j, nx, ny).show();
+        }
+    }
 
     return 0;
 }

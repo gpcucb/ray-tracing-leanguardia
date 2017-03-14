@@ -18,9 +18,7 @@ Vector::~Vector()
 
 void Vector::show()
 {
-    cout<<"X. "<< x << endl
-        <<"Y. "<< y << endl
-        <<"Z. "<< z << endl << endl;
+    cout<<"X. "<< x <<" Y. "<< y <<" Z. "<< z << endl;
 }
 
 Vector Vector::sum(Vector v)
