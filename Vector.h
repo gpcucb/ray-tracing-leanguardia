@@ -13,11 +13,11 @@ class Vector
         ~Vector();
         void show();
         Vector sum(Vector);
-        Vector sumToZ(float);
         Vector difference(Vector);
         float length();
         float dotProduct(Vector);
         Vector crossProduct(Vector);
+        Vector numberProduct(float);
         Vector divide(float);
 
     private:

@@ -10,13 +10,13 @@ int main() {
     Vector center (0,0,0);
     Vector up (0,1,0);
 
-    Camera camera (eye, center, up);
+//    Camera camera (eye, center, up);
 
-    cout << eye.length() << endl ;
+//    cout << eye.length() << endl ;
 
-    camera.w().show();
-    camera.u().show();
-    camera.v().show();
+//    camera.wVec().show();
+//    camera.uVec().show();
+//    camera.v().show();
 
     return 0;
 }

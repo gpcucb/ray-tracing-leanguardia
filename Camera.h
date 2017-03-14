@@ -9,13 +9,15 @@
 class Camera {
     private:
         Vector e, center, up;
+        float angle, distanceToFoV;
 
     public:
-        Camera(Vector, Vector, Vector);
+        Camera(Vector, Vector, Vector, float, float);
         ~Camera();
-        Vector w();
-        Vector u();
-        Vector v();
+        Vector wVec();
+        Vector uVec();
+        Vector vVec();
+        Vector calculateRayDirection(float, float, float, float);
 };
 
 

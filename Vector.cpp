@@ -30,11 +30,6 @@ Vector Vector::sum(Vector v)
                   z + v.z);
 }
 
-Vector Vector::sumToZ(float num)
-{
-    return Vector(x, y, z+num);
-}
-
 Vector Vector::difference(Vector v)
 {
     return Vector(x - v.x,
@@ -45,6 +40,11 @@ Vector Vector::difference(Vector v)
 float Vector::length()
 {
     return (float)sqrt(x*x + y*y + z*z);
+}
+
+Vector Vector::numberProduct(float n)
+{
+    return Vector(x * n, y * n, z * n);
 }
 
 Vector Vector::crossProduct(Vector v)
