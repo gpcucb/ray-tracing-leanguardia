@@ -8,7 +8,7 @@ RGB::RGB(float red, float green, float blue)
 {
     this -> red = red;
     this -> green = green;
-    this -> blue = blue;
+    this -> blue = blue;git
 }
 
 RGB::~RGB() {}
