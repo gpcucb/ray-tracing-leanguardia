@@ -4,7 +4,6 @@
 
 #include "Camera.h"
 
-#define PI 3.14159265;
 
 
 Camera::Camera(Vector e, Vector center, Vector up, float angle, float distanceToFoV)
@@ -15,8 +14,6 @@ Camera::Camera(Vector e, Vector center, Vector up, float angle, float distanceTo
     this -> angle = angle;
     this -> distanceToFoV = distanceToFoV;
 }
-
-Camera::~Camera() {}
 
 Vector Camera::wVec()
 {

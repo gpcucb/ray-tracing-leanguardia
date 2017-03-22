@@ -1,6 +1,7 @@
 #include "RGB.h"
 #include "Camera.h"
 #include "Sphere.h"
+#include "Triangle.h"
 
 int main() {
 
@@ -20,6 +21,10 @@ int main() {
     Camera camera(eye, center, up, fieldOfView, distanceTo);
 
     Sphere sphere(spherePosition, radius);
+    Vector aCorner = Vector(552.0,8,0.0);
+    Vector bCorner = Vector(0.0,0.0,0.0);
+    Vector cCorner = Vector(0.0,0.0,560.0);
+    Triangle triangle(aCorner, bCorner, cCorner);
 
     for (int i = 0; i < nx; i++)
     {
@@ -27,6 +32,7 @@ int main() {
         {
             rayDirection = camera.calculateRayDirection(i, j, nx, ny);
             sphere.calculatesIntersection(eye, rayDirection);
+//            triangle.calculatesIntersection(eye, rayDirection);
         }
     }
 

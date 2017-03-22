@@ -11,11 +11,12 @@ class Sphere {
 
 private:
     Vector position;
-    float radius;
+    float radius, infinity;
 
 public:
     Sphere(Vector, float);
     float calculatesIntersection(Vector, Vector);
+
 };
 
 

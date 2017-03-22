@@ -5,6 +5,8 @@
 #ifndef PROJECTS_CAMERA_H
 #define PROJECTS_CAMERA_H
 #include "Vector.h"
+#define PI 3.14159265;
+
 
 class Camera {
     private:
@@ -13,7 +15,6 @@ class Camera {
 
     public:
         Camera(Vector, Vector, Vector, float, float);
-        ~Camera();
         Vector wVec();
         Vector uVec();
         Vector vVec();

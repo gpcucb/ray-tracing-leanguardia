@@ -57,7 +57,21 @@ float Vector::dotProduct(Vector v)
     return x*v.x + y*v.y + z*v.z;
 }
 
-Vector Vector::divide(float num)
+float Vector::getX()
 {
-    return Vector(x/num, y/num, z/num);
+    return x;
+}
+
+float Vector::getY()
+{
+    return y;
+}
+
+float Vector::getZ()
+{
+    return z;
+}
+
+Vector Vector::divide(float n) {
+    return Vector(x/n, y/n, z/n);
 }
