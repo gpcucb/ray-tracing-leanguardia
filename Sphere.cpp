@@ -3,40 +3,40 @@
 //
 
 #include "Sphere.h"
+#include "Intersection.h"
 
-Sphere::Sphere(Vector position, float radius)
+Sphere::Sphere(Vector position, double radius)
 {
     this->position = position;
     this->radius = radius;
-    infinity = numeric_limits<float>::infinity();
+    infinity = numeric_limits<double>::infinity();
 }
 
-float Sphere::calculatesIntersection(Vector rayOrigin, Vector rayDirection)
+Intersection Sphere::calculatesIntersection(Ray ray)
 {
-    float a, b, c, discriminant, t0, t1, t = infinity;
-    Vector rayOriginMinusCenter = rayOrigin.difference(position);
-    a = rayDirection.dotProduct(rayDirection);
-    b = rayDirection.numberProduct(2).dotProduct(rayOriginMinusCenter);
-    c = rayOriginMinusCenter.dotProduct(rayOriginMinusCenter);
+    double a, b, c, discriminant, t0, t1, t = infinity;
+    Vector rayOriginMinusCenter = ray.getOrigin().difference(position);
 
-    cout<<"a. "<<a<<" b. "<<b<<" c. "<<c<<endl;
+    a = ray.getDirection().dotProduct(ray.getDirection());
+    b = 2 * ray.getDirection().dotProduct(rayOriginMinusCenter);
+    c = rayOriginMinusCenter.dotProduct(rayOriginMinusCenter) - pow(radius, 2);
 
-    discriminant = pow(b, 2) - (4 * a * c);
-//    cout << discriminant << endl;
+//    cout<<"a. "<<a<<" b. "<<b<<" c. "<<c<<endl;
+
+    discriminant = (pow(b, 2) - (4 * a * c));
+    bool success = false;
     if (discriminant < 0.0)
-        return false;
+        return Intersection(success);
 
-    t0 = ((b * -1) - sqrt(discriminant))/(2 * a);
-    t1 = ((b * -1) + sqrt(discriminant)) / (2 * a);
-    bool intersection = false;
+    t0 = (-b + sqrt(discriminant)) / (2 * a);
+    t1 = (-b - sqrt(discriminant)) / (2 * a);
     if ((t0 > 0.0) && (t0 < t)){
         t = t0;
-        intersection = true;
+        success = true;
     }
     if ((t1 > 0.0) && (t1 < t)){
         t = t1;
-        intersection = true;
+        success = true;
     }
-    cout << t << endl;
-    return intersection;
+    return Intersection(success, t);
 }

@@ -3,6 +3,8 @@
 //
 
 #include "Triangle.h"
+#include "Intersection.h"
+#include "Ray.h"
 
 Triangle::Triangle(Vector a, Vector b, Vector c)
 {
@@ -11,35 +13,36 @@ Triangle::Triangle(Vector a, Vector b, Vector c)
     this -> c = c;
 }
 
-float Triangle::calculatesIntersection(Vector rAyOrigin, Vector rayDirection)
+Intersection Triangle::calculatesIntersection(Ray ray)
 {
-    float A, B, C, D, E, F, G, H, I, J, K, L, M, beta, gama, t;
+    double A, B, C, D, E, F, G, H, I, J, K, L, M, beta, gama, t;
     A = a.getX() - b.getX();
     B = a.getY() - b.getY();
     C = a.getZ() - b.getZ();
     D = a.getX() - c.getX();
     E = a.getY() - c.getY();
     F = a.getZ() - c.getZ();
-    G = rayDirection.getX();
-    H = rayDirection.getY();
-    I = rayDirection.getZ();
-    J = a.getX() - rAyOrigin.getX();
-    K = a.getY() - rAyOrigin.getY();
-    L = a.getZ() - rAyOrigin.getZ();
+    G = ray.getDirection().getX();
+    H = ray.getDirection().getY();
+    I = ray.getDirection().getZ();
+    J = a.getX() - ray.getOrigin().getX();
+    K = a.getY() - ray.getOrigin().getY();
+    L = a.getZ() - ray.getOrigin().getZ();
 
     M = A * (E*I - H*F) + B * (G*F - D*I) + C * (D*H - E*G);
     beta = (J*(E*I - H*F) + K*(G*F - D*I) + L*(D*H - E*G)) / M;
     gama = (I*(A*K - J*B) + H*(J*C - A*L) + G*(B*L - K*C)) / M;
     t = -1 * ((F*(A*K - J*B) + E*(J*C - A*L) + D*(B*L - K*C)) / M);
 
-    cout<<"beta "<<beta<<" - gama "<<gama<<" - t "<<t <<endl;
+//    cout<<"beta "<<beta<<" - gama "<<gama<<" - t "<<t <<endl;
 
-    bool intersection = false;
+    bool success = false;
 
     if ((beta > 0) && (gama > 0) && ((beta + gama) < 1))
     {
-        intersection = true;
+        success = true;
+        cout<< t<< endl;
     }
 
-    return intersection;
+    return Intersection(success,t);
 }

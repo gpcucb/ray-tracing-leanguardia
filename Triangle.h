@@ -6,6 +6,8 @@
 #define PROJECTS_TRIANGLE_H
 
 #include "Vector.h"
+#include "Intersection.h"
+#include "Ray.h"
 
 class Triangle {
 
@@ -14,7 +16,7 @@ private:
 
 public:
     Triangle(Vector, Vector, Vector);
-    float calculatesIntersection(Vector, Vector);
+    Intersection calculatesIntersection(Ray ray);
 
 };
 

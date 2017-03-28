@@ -12,7 +12,7 @@ using namespace std;
 class Renderer
 {
 public:
-	Renderer(int width, int height, float backRed, float backGreen, float backBlue);
+	Renderer(int width, int height, double backRed, double backGreen, double backBlue);
 	~Renderer();
 
 	void reset();

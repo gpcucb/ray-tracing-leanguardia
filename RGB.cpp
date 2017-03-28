@@ -4,7 +4,7 @@
 
 #include "RGB.h"
 
-RGB::RGB(float red, float green, float blue)
+RGB::RGB(double red, double green, double blue)
 {
     this -> red = red;
     this -> green = green;

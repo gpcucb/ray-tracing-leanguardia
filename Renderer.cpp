@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Renderer::Renderer(int width, int height, float backRed, float backGreen, float backBlue)
+Renderer::Renderer(int width, int height, double backRed, double backGreen, double backBlue)
 	: backgroundColor(backRed, backGreen, backBlue)
 {
 	this->width = width;

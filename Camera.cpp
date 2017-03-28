@@ -4,9 +4,7 @@
 
 #include "Camera.h"
 
-
-
-Camera::Camera(Vector e, Vector center, Vector up, float angle, float distanceToFoV)
+Camera::Camera(Vector e, Vector center, Vector up, double angle, double distanceToFoV)
 {
     this -> e = e;
     this -> center = center;
@@ -32,22 +30,22 @@ Vector Camera::vVec()
     return wVec().crossProduct(uVec());
 }
 
-Vector Camera::calculateRayDirection(float i, float j, float nx, float ny)
+Vector Camera::calculateRayDirection(double i, double j, double nx, double ny)
 {
-    float angleTimesPI = angle * (float)PI;
-    float angleInRadians = (float) (angleTimesPI / 180.0);
-    float top = (float)tan((angleInRadians) / 2) * distanceToFoV;
-    float bottom = -top;
+    double angleTimesPI = angle * (double)PI;
+    double angleInRadians = (double) (angleTimesPI / 180.0);
+    double top = (double)tan((angleInRadians) / 2) * distanceToFoV;
+    double bottom = -top;
 
-    float right = (((nx * top) / ny ));
-    float left = -right;
+    double right = (((nx * top) / ny ));
+    double left = -right;
 
-    float u = (float) (left + ((right - left) * (i + 0.5)) / nx);
-    float v = (float) (bottom + ((top - bottom) * (j + 0.5)) / ny);
+    double u = (double) (left + ((right - left) * (i + 0.5)) / nx);
+    double v = (double) (bottom + ((top - bottom) * (j + 0.5)) / ny);
 
-    Vector uDirection = uVec().numberProduct(u);
-    Vector vDirection = vVec().numberProduct(v);
-    Vector wDirection = wVec().numberProduct(-distanceToFoV);
+    Vector uU = uVec().numberProduct(u);
+    Vector vV = vVec().numberProduct(v);
+    Vector minusW = wVec().numberProduct(-distanceToFoV);
 
-    return uDirection.sum(vDirection).sum(wDirection);
+    return uU.sum(vV).sum(minusW);
 }

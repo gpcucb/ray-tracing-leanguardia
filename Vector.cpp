@@ -4,7 +4,7 @@ Vector::Vector() {
 
 }
 
-Vector::Vector(float x, float y, float z)
+Vector::Vector(double x, double y, double z)
 {
     this -> x = x;
     this -> y = y;
@@ -35,9 +35,9 @@ Vector Vector::difference(Vector v)
                   z - v.z);
 }
 
-float Vector::length()
+double Vector::length()
 {
-    return (float)sqrt(x*x + y*y + z*z);
+    return (double)sqrt(x*x + y*y + z*z);
 }
 
 Vector Vector::crossProduct(Vector v)
@@ -47,31 +47,31 @@ Vector Vector::crossProduct(Vector v)
                    x*v.y - y*v.x);
 }
 
-float Vector::dotProduct(Vector v)
+double Vector::dotProduct(Vector v)
 {
     return x*v.x + y*v.y + z*v.z;
 }
 
-Vector Vector::numberProduct(float n)
+Vector Vector::numberProduct(double n)
 {
     return Vector(x * n, y * n, z * n);
 }
 
-Vector Vector::numberDivision(float n) {
+Vector Vector::numberDivision(double n) {
     return Vector(x/n, y/n, z/n);
 }
 
-float Vector::getX()
+double Vector::getX()
 {
     return x;
 }
 
-float Vector::getY()
+double Vector::getY()
 {
     return y;
 }
 
-float Vector::getZ()
+double Vector::getZ()
 {
     return z;
 }

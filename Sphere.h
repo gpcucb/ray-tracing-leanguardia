@@ -6,16 +6,18 @@
 #define PROJECTS_SPHERE_H
 
 #include "Vector.h"
+#include "Ray.h"
+#include "Intersection.h"
 
 class Sphere {
 
 private:
     Vector position;
-    float radius, infinity;
+    double radius, infinity;
 
 public:
-    Sphere(Vector, float);
-    float calculatesIntersection(Vector, Vector);
+    Sphere(Vector, double);
+    Intersection calculatesIntersection(Ray ray);
 
 };
 

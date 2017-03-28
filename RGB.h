@@ -7,10 +7,10 @@ using namespace std;
 class RGB {
 
 private:
-    float red, green, blue;
+    double red, green, blue;
 
 public:
-    RGB(float, float, float);
+    RGB(double, double, double);
     ~RGB();
 
     void show();
