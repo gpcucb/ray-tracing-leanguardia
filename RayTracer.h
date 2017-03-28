@@ -7,14 +7,16 @@
 
 #include "Sphere.h"
 #include "Triangle.h"
+#include <vector>
 
 class RayTracer {
 private:
     double nx, ny;
-
+    vector<Object*> objects;
 public:
     RayTracer(double, double);
-
+    void insertObject(Object*);
+    void showObjects();
 };
 
 

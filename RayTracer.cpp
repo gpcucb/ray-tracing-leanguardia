@@ -10,3 +10,15 @@ RayTracer::RayTracer(double width, double height)
     ny = height;
 }
 
+void RayTracer::insertObject(Object *object)
+{
+    objects.push_back(object);
+}
+
+void RayTracer::showObjects()
+{
+    for (auto &&object : objects) {
+        object->show();
+    }
+}
+
