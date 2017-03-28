@@ -12,6 +12,8 @@ Sphere::Sphere(Vector position, double radius)
     infinity = numeric_limits<double>::infinity();
 }
 
+Sphere::~Sphere() {}
+
 Intersection Sphere::calculatesIntersection(Ray ray)
 {
     double a, b, c, discriminant, t0, t1, t = infinity;
@@ -40,3 +42,8 @@ Intersection Sphere::calculatesIntersection(Ray ray)
     }
     return Intersection(success, t);
 }
+
+void Sphere::show() {
+    cout << "I'm a Sphere" << endl;
+}
+

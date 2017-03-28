@@ -5,19 +5,18 @@
 #ifndef PROJECTS_TRIANGLE_H
 #define PROJECTS_TRIANGLE_H
 
-#include "Vector.h"
-#include "Intersection.h"
-#include "Ray.h"
+#include "Object.h"
 
-class Triangle {
+class Triangle: public Object {
 
 private:
     Vector a, b, c;
 
 public:
     Triangle(Vector, Vector, Vector);
+    ~Triangle();
     Intersection calculatesIntersection(Ray ray);
-
+    void show();
 };
 
 

@@ -4,7 +4,8 @@
 
 #include "Intersection.h"
 
-Intersection::Intersection(bool success) {
+Intersection::Intersection(bool success)
+{
     this -> success = success;
 }
 

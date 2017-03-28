@@ -13,6 +13,8 @@ Triangle::Triangle(Vector a, Vector b, Vector c)
     this -> c = c;
 }
 
+Triangle::~Triangle() {}
+
 Intersection Triangle::calculatesIntersection(Ray ray)
 {
     double A, B, C, D, E, F, G, H, I, J, K, L, M, beta, gama, t;
@@ -45,4 +47,8 @@ Intersection Triangle::calculatesIntersection(Ray ray)
     }
 
     return Intersection(success,t);
+}
+
+void Triangle::show() {
+    cout << "I'm a Triangle" << endl;
 }

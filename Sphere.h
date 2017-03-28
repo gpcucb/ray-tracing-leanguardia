@@ -5,11 +5,9 @@
 #ifndef PROJECTS_SPHERE_H
 #define PROJECTS_SPHERE_H
 
-#include "Vector.h"
-#include "Ray.h"
-#include "Intersection.h"
+#include "Object.h"
 
-class Sphere {
+class Sphere: public Object {
 
 private:
     Vector position;
@@ -17,6 +15,8 @@ private:
 
 public:
     Sphere(Vector, double);
+    ~Sphere();
+    void show();
     Intersection calculatesIntersection(Ray ray);
 
 };
