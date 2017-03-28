@@ -40,11 +40,6 @@ float Vector::length()
     return (float)sqrt(x*x + y*y + z*z);
 }
 
-Vector Vector::numberProduct(float n)
-{
-    return Vector(x * n, y * n, z * n);
-}
-
 Vector Vector::crossProduct(Vector v)
 {
     return Vector (y*v.z - z*v.y,
@@ -55,6 +50,15 @@ Vector Vector::crossProduct(Vector v)
 float Vector::dotProduct(Vector v)
 {
     return x*v.x + y*v.y + z*v.z;
+}
+
+Vector Vector::numberProduct(float n)
+{
+    return Vector(x * n, y * n, z * n);
+}
+
+Vector Vector::numberDivision(float n) {
+    return Vector(x/n, y/n, z/n);
 }
 
 float Vector::getX()
@@ -70,8 +74,4 @@ float Vector::getY()
 float Vector::getZ()
 {
     return z;
-}
-
-Vector Vector::divide(float n) {
-    return Vector(x/n, y/n, z/n);
 }

@@ -18,7 +18,7 @@ class Vector
         float dotProduct(Vector);
         Vector crossProduct(Vector);
         Vector numberProduct(float);
-        Vector divide(float);
+        Vector numberDivision(float);
         float getX();
         float getY();
         float getZ();

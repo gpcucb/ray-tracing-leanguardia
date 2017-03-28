@@ -19,7 +19,7 @@ float Sphere::calculatesIntersection(Vector rayOrigin, Vector rayDirection)
     b = rayDirection.numberProduct(2).dotProduct(rayOriginMinusCenter);
     c = rayOriginMinusCenter.dotProduct(rayOriginMinusCenter);
 
-//    cout<<"a. "<<a<<" b. "<<b<<" c. "<<c<<endl;
+    cout<<"a. "<<a<<" b. "<<b<<" c. "<<c<<endl;
 
     discriminant = pow(b, 2) - (4 * a * c);
 //    cout << discriminant << endl;
@@ -37,6 +37,6 @@ float Sphere::calculatesIntersection(Vector rayOrigin, Vector rayDirection)
         t = t1;
         intersection = true;
     }
-//    cout << t << endl;
+    cout << t << endl;
     return intersection;
 }
