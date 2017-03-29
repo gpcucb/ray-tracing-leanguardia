@@ -8,6 +8,7 @@
 #include "Sphere.h"
 #include "Triangle.h"
 #include "Camera.h"
+#include "RGB.h"
 #include <vector>
 
 class RayTracer {
@@ -19,7 +20,10 @@ public:
     RayTracer(double, double, Camera);
     void insertObject(Object*);
     void showObjects();
-    void rayTrace();
+    void rayTracing();
+    RGB rayTrace(Ray ray);
+
+    RGB calculateColor(Object *pObject, Ray ray);
 };
 
 

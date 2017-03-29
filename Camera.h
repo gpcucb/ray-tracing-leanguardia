@@ -17,10 +17,8 @@ class Camera {
 
     public:
         Camera(Vector, Vector, Vector, double, double);
-
-    Camera();
-
-    Vector wVec();
+        Camera();
+        Vector wVec();
         Vector uVec();
         Vector vVec();
         Vector calculateRayDirection(double, double, double, double);

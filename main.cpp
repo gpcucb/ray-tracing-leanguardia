@@ -25,7 +25,7 @@ int main()
     rayTracer.insertObject(&sphere);
     rayTracer.insertObject(&triangle);
     rayTracer.showObjects();
-    rayTracer.rayTrace();
+    rayTracer.rayTracing();
 
     return 0;
 }

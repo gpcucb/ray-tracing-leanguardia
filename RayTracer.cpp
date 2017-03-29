@@ -3,6 +3,7 @@
 //
 
 #include "RayTracer.h"
+#include "RGB.h"
 
 RayTracer::RayTracer(double width, double height, Camera camera) {
     nx = width;
@@ -22,17 +23,31 @@ void RayTracer::showObjects()
     }
 }
 
-void RayTracer::rayTrace()
+void RayTracer::rayTracing()
 {
-    Vector rayDirection;
     for (int i = 0; i < nx; i++)
     {
         for (int j = 0; j < ny; j++)
         {
-            rayDirection = camera.calculateRayDirection(i, j, nx, ny);
+            Vector rayDirection = camera.calculateRayDirection(i, j, nx, ny);
             Ray ray = camera.createRay(rayDirection);
-            objects[0]->calculatesIntersection(ray);
-            objects[1]->calculatesIntersection(ray);
+            RGB pixelColor = rayTrace(ray);
         }
     }
+}
+
+RGB RayTracer::rayTrace(Ray ray)
+{
+    for (Object* object : objects) {
+        Intersection intersection = object -> calculatesIntersection(ray);
+        if (intersection.succeeded())
+            return calculateColor(object, ray);
+        else
+            return RGB(0,0,0);
+    }
+
+}
+
+RGB RayTracer::calculateColor(Object *object, Ray ray) {
+    return RGB(256, 256, 256);
 }

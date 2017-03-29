@@ -11,8 +11,11 @@ private:
     bool success;
     double distance;
 public:
+    Intersection();
     Intersection(bool success);
     Intersection(bool success, double distance);
+
+    bool succeeded();
 };
 
 
