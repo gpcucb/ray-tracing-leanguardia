@@ -3,6 +3,9 @@
 //
 
 #include "Camera.h"
+#include "Ray.h"
+
+Camera::Camera() {}
 
 Camera::Camera(Vector e, Vector center, Vector up, double angle, double distanceToFoV)
 {
@@ -49,3 +52,8 @@ Vector Camera::calculateRayDirection(double i, double j, double nx, double ny)
 
     return uU.sum(vV).sum(minusW);
 }
+
+Ray Camera::createRay(Vector rayDirection) {
+    return Ray(e, rayDirection);
+}
+

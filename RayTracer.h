@@ -7,16 +7,19 @@
 
 #include "Sphere.h"
 #include "Triangle.h"
+#include "Camera.h"
 #include <vector>
 
 class RayTracer {
 private:
     double nx, ny;
+    Camera camera;
     vector<Object*> objects;
 public:
-    RayTracer(double, double);
+    RayTracer(double, double, Camera);
     void insertObject(Object*);
     void showObjects();
+    void rayTrace();
 };
 
 

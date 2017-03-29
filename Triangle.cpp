@@ -43,7 +43,7 @@ Intersection Triangle::calculatesIntersection(Ray ray)
     if ((beta > 0) && (gama > 0) && ((beta + gama) < 1))
     {
         success = true;
-        cout<< t<< endl;
+//        cout<< t<< endl;
     }
 
     return Intersection(success,t);

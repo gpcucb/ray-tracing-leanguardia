@@ -5,6 +5,8 @@
 #ifndef PROJECTS_CAMERA_H
 #define PROJECTS_CAMERA_H
 #include "Vector.h"
+#include "Ray.h"
+
 #define PI 3.14159265;
 
 
@@ -15,10 +17,15 @@ class Camera {
 
     public:
         Camera(Vector, Vector, Vector, double, double);
-        Vector wVec();
+
+    Camera();
+
+    Vector wVec();
         Vector uVec();
         Vector vVec();
         Vector calculateRayDirection(double, double, double, double);
+
+    Ray createRay(Vector rayDirection);
 };
 
 
